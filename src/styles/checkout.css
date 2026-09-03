@@ -1,0 +1,126 @@
+.checkout-layout {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.checkout-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-light);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-md);
+}
+
+.checkout-title {
+  font-size: 1.85rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.checkout-subtitle {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+.review-section-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  background: var(--bg-main);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  border: 1px solid var(--border-light);
+  margin-bottom: 2rem;
+}
+
+.review-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-label {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.2rem;
+}
+
+.review-value {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.price-breakdown-card {
+  background: #f8fafc;
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  border: 1px solid var(--border-light);
+  margin-bottom: 2.5rem;
+}
+
+.price-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.price-line.divider {
+  border-top: 1px dashed var(--border-light);
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+}
+
+.price-line.total {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.price-line.total .total-amount {
+  color: var(--primary);
+  font-size: 1.6rem;
+}
+
+.checkout-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+  .checkout-card {
+    padding: 1.5rem;
+  }
+  .review-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .checkout-actions-row {
+    flex-direction: column-reverse;
+    gap: 0.75rem;
+  }
+  .checkout-actions-row .btn {
+    width: 100%;
+  }
+}
+

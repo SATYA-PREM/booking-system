@@ -1,0 +1,212 @@
+.seat-selection-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.seat-map-card {
+  background: var(--bg-cinema-card);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-dark);
+  padding: 2.5rem 1.5rem;
+  box-shadow: var(--shadow-cinema);
+  text-align: center;
+}
+
+/* Screen Curve */
+.screen-area {
+  margin: 0 auto 3rem;
+  max-width: 580px;
+  perspective: 400px;
+}
+
+.screen-curve {
+  height: 12px;
+  background: linear-gradient(to right, rgba(124, 58, 237, 0.2), #a78bfa, rgba(124, 58, 237, 0.2));
+  border-radius: 50% / 100% 100% 0 0;
+  box-shadow: 0 10px 30px rgba(167, 139, 250, 0.6);
+  margin-bottom: 0.75rem;
+}
+
+.screen-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--text-muted);
+}
+
+/* Seat Legend */
+.seat-legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.825rem;
+  color: var(--text-gray-300);
+}
+
+.legend-box {
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+}
+
+.legend-box.avail {
+  background: var(--bg-cinema-subtle);
+  border: 1px solid var(--border-light);
+}
+
+.legend-box.selected {
+  background: var(--primary);
+  border: 1px solid #c4b5fd;
+  box-shadow: 0 0 10px var(--primary-glow);
+}
+
+.legend-box.occupied {
+  background: #334155;
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Tier Sections */
+.tier-section {
+  margin-bottom: 2rem;
+}
+
+.tier-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 1rem;
+  background: rgba(30, 41, 59, 0.5);
+  border-radius: var(--radius-sm);
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-gray-300);
+}
+
+.seat-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.row-letter {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  width: 20px;
+  text-align: center;
+}
+
+.seat-item {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  border: 1.5px solid transparent;
+  user-select: none;
+}
+
+.seat-item.available {
+  background: var(--bg-cinema-subtle);
+  border-color: var(--border-dark);
+  color: var(--text-gray-300);
+}
+
+.seat-item.available:hover {
+  border-color: var(--primary);
+  background: var(--primary-light);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.seat-item.selected {
+  background: linear-gradient(135deg, var(--primary), #9333ea);
+  border-color: #c4b5fd;
+  color: #fff;
+  box-shadow: 0 0 12px var(--primary-glow);
+  transform: scale(1.08);
+}
+
+.seat-item.occupied {
+  background: #1e293b;
+  color: #475569;
+  border-color: #334155;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Sidebar Summary */
+.seat-summary-card {
+  background: var(--bg-cinema-card);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-dark);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-cinema);
+  position: sticky;
+  top: 5.5rem;
+}
+
+.summary-movie-info {
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-dark);
+  margin-bottom: 1.25rem;
+}
+
+.summary-thumb {
+  width: 65px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+.selected-seats-badge-list {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin: 0.75rem 0;
+}
+
+.seat-pill-tag {
+  padding: 0.25rem 0.6rem;
+  background: var(--primary-light);
+  border: 1px solid var(--primary);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #c4b5fd;
+}
+
+@media (max-width: 992px) {
+  .seat-selection-layout {
+    grid-template-columns: 1fr;
+  }
+  .seat-summary-card {
+    position: static;
+  }
+}
+
