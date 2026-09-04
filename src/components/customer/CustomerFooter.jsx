@@ -6,7 +6,7 @@ const CustomerFooter = () => {
   return (
     <footer style={{ background: '#050811', borderTop: '1px solid #1f2937', padding: '4rem 0 2rem', marginTop: 'auto' }}>
       <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1.5fr', gap: '3rem', marginBottom: '3rem' }}>
+        <div className="footer-grid">
           {/* Brand Col */}
           <div>
             <Link to="/" className="brand-wrap" style={{ marginBottom: '1rem', display: 'inline-flex' }}>

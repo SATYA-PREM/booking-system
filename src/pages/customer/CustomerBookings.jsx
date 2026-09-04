@@ -185,7 +185,7 @@ const CustomerBookings = () => {
                 </div>
 
                 {/* Details Grid */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem', padding: '1rem 0', borderTop: '1px solid var(--border-dark)', borderBottom: '1px solid var(--border-dark)', fontSize: '0.9rem' }}>
+                <div className="booking-card-grid">
                   <div>
                     <span style={{ fontSize: '0.75rem', color: 'var(--text-dim)', textTransform: 'uppercase', fontWeight: 700, display: 'block' }}>Date</span>
                     <strong>{b.date}</strong>

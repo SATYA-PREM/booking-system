@@ -59,7 +59,7 @@ const CustomerProfile = () => {
             <input id="pName" type="text" className="form-input" value={name} onChange={(e) => setName(e.target.value)} required />
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+          <div className="form-row-2col">
             <div className="form-group">
               <label className="form-label" htmlFor="pEmail">Email Address</label>
               <input id="pEmail" type="email" className="form-input" value={email} onChange={(e) => setEmail(e.target.value)} required />

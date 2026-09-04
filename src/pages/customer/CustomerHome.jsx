@@ -54,6 +54,7 @@ const CustomerHome = () => {
               display: 'flex',
               gap: '0.5rem',
               maxWidth: '520px',
+              width: '100%',
               background: 'rgba(17, 24, 39, 0.9)',
               padding: '0.4rem',
               borderRadius: 'var(--radius-full)',
@@ -123,13 +124,13 @@ const CustomerHome = () => {
 
       {/* Now Showing Section */}
       <section className="page-wrapper container">
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '2rem' }}>
+        <div className="section-header-wrap">
           <div>
             <span className="section-badge">In Theatres</span>
             <h2 className="section-title">Now Showing</h2>
             <p className="section-subtitle">Catch the latest blockbusters on the big screen with Dolby Atmos and IMAX.</p>
           </div>
-          <Link to="/movies" className="btn btn-outline btn-sm">
+          <Link to="/movies" className="btn btn-outline btn-sm view-all-btn">
             <span>View All</span>
             <ArrowRight size={14} />
           </Link>
@@ -150,7 +151,7 @@ const CustomerHome = () => {
       {comingSoon.length > 0 && (
         <section style={{ background: '#0a0f1d', padding: '4rem 0', borderTop: '1px solid var(--border-dark)', borderBottom: '1px solid var(--border-dark)' }}>
           <div className="container">
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '2rem' }}>
+            <div className="section-header-wrap">
               <div>
                 <span className="section-badge" style={{ background: 'rgba(236, 72, 153, 0.15)', color: '#f472b6', borderColor: 'rgba(236, 72, 153, 0.3)' }}>
                   Advance Booking
@@ -158,7 +159,7 @@ const CustomerHome = () => {
                 <h2 className="section-title">Coming Soon</h2>
                 <p className="section-subtitle">Upcoming releases and anticipated cinematic events.</p>
               </div>
-              <Link to="/movies?status=coming-soon" className="btn btn-outline btn-sm">
+              <Link to="/movies?status=coming-soon" className="btn btn-outline btn-sm view-all-btn">
                 <span>Explore All</span>
                 <ArrowRight size={14} />
               </Link>
@@ -187,7 +188,7 @@ const CustomerHome = () => {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.75rem' }}>
+        <div className="features-grid">
           <div style={{ background: 'var(--bg-cinema-card)', padding: '2rem', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-dark)', textAlign: 'center' }}>
             <div style={{ width: '3.5rem', height: '3.5rem', background: 'var(--primary-light)', color: '#a78bfa', borderRadius: 'var(--radius-full)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.25rem' }}>
               <Clapperboard size={28} />
@@ -232,4 +233,3 @@ const CustomerHome = () => {
 };
 
 export default CustomerHome;
-

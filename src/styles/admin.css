@@ -229,6 +229,18 @@
   margin-bottom: 2rem;
 }
 
+.admin-dual-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1.5rem;
+}
+
+.admin-theatres-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.75rem;
+}
+
 /* Tables */
 .admin-table-container {
   overflow-x: auto;
@@ -302,8 +314,9 @@
   }
 }
 
-@media (max-width: 900px) {
-  .admin-charts-grid {
+@media (max-width: 992px) {
+  .admin-charts-grid,
+  .admin-dual-grid {
     grid-template-columns: 1fr;
   }
   .admin-stats-grid {
@@ -347,5 +360,24 @@
   }
   .admin-stats-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .admin-theatres-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-view-body {
+    padding: 0.85rem;
+  }
+  .stat-card-box {
+    padding: 1rem;
+  }
+  .stat-main-number {
+    font-size: 1.6rem;
   }
 }

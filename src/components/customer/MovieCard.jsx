@@ -80,8 +80,8 @@ const MovieCard = ({ movie, onWatchTrailer }) => {
         </div>
 
         <div className="movie-card-footer">
-          <div>
-            <span style={{ fontSize: '0.7rem', color: 'var(--text-dim)', display: 'block' }}>Starts at</span>
+          <div className="movie-card-footer-price">
+            <span className="price-label">Starts at</span>
             <span className="movie-price-tag">{formatCurrency(basePrice)}</span>
           </div>
 

@@ -52,7 +52,7 @@ const CustomerTheatres = () => {
       </div>
 
       {/* Theatres Grid */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: '2rem' }}>
+      <div className="theatres-grid">
         {filteredTheatres.map((theatre) => (
           <div
             key={theatre.id}

@@ -105,7 +105,7 @@ const AdminAnalytics = () => {
         </div>
 
         {/* Occupancy Meters & Peak Showtimes */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '1.5rem' }}>
+        <div className="admin-dual-grid">
           {/* Seat Occupancy Meters */}
           <div className="admin-card" style={{ marginBottom: 0 }}>
             <h3 className="admin-card-title" style={{ marginBottom: '1.25rem' }}>Today's Screen Occupancy Rates</h3>

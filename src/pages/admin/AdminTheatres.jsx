@@ -57,7 +57,7 @@ const AdminTheatres = () => {
         </div>
 
         {/* Theatres Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: '1.75rem' }}>
+        <div className="admin-theatres-grid">
           {theatres.map((theatre) => {
             const theatreScreens = screens.filter((s) => s.theatreId === theatre.id);
 

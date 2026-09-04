@@ -252,7 +252,7 @@ const CustomerPayment = () => {
         )}
 
         {/* Method Selector */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.6rem', marginBottom: '1.75rem' }}>
+        <div className="payment-methods-grid">
           {[
             { id: 'card', label: 'Card', icon: CreditCard },
             { id: 'upi', label: 'UPI Pay', icon: QrCode },
@@ -348,7 +348,7 @@ const CustomerPayment = () => {
                 />
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+              <div className="form-row-2col">
                 <div className="form-group">
                   <label className="form-label" htmlFor="cardExp">Expiry (MM/YY)</label>
                   <input
