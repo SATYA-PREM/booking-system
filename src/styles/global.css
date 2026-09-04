@@ -389,7 +389,31 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--primary);
 }
 
+/* Responsive Media Queries */
 @media (max-width: 768px) {
-  .section-title { font-size: 1.85rem; }
-  .page-wrapper { padding: 1.5rem 0 3.5rem; }
+  .container {
+    padding: 0 1rem;
+  }
+  .section-title {
+    font-size: 1.75rem;
+  }
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+  .page-wrapper {
+    padding: 1.5rem 0 3.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+  .btn-lg {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.95rem;
+  }
+  .modal-content {
+    padding: 1.25rem;
+  }
 }

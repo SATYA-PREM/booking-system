@@ -188,10 +188,23 @@
   background: var(--primary-hover);
 }
 
-@media (max-width: 480px) {
-  .chatbot-window {
-    width: calc(100vw - 2rem);
-    height: 460px;
+/* Responsive Media Queries */
+@media (max-width: 600px) {
+  .chatbot-wrapper {
+    bottom: 1rem;
+    right: 1rem;
+  }
+  .chatbot-launcher {
+    width: 3.2rem;
+    height: 3.2rem;
   }
 }
 
+@media (max-width: 480px) {
+  .chatbot-window {
+    width: calc(100vw - 2rem);
+    height: 75vh;
+    max-height: 480px;
+    right: 0;
+  }
+}

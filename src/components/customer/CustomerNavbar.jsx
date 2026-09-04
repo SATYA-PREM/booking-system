@@ -48,10 +48,20 @@ const CustomerNavbar = () => {
     <header className="customer-navbar">
       <div className="container customer-nav-container">
         {/* Left: Brand Logo + City Picker */}
-        <div className="nav-left-group" style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
+        <div className="nav-left-group">
+          {/* Mobile Hamburger Toggle */}
+          <button
+            type="button"
+            className="mobile-nav-toggle"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle Navigation Menu"
+          >
+            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+
           <Link to="/" className="brand-wrap">
             <div className="brand-icon">
-              <Film size={22} />
+              <Film size={20} />
             </div>
             <span>
               Movie<span className="brand-name-accent">Magic</span>
@@ -65,26 +75,13 @@ const CustomerNavbar = () => {
               className="city-select-btn"
               onClick={() => setCityDropdown(!cityDropdown)}
             >
-              <MapPin size={14} color="#a78bfa" />
+              <MapPin size={13} color="#a78bfa" />
               <span>{selectedCity}</span>
-              <ChevronDown size={14} />
+              <ChevronDown size={13} />
             </button>
 
             {cityDropdown && (
-              <div
-                style={{
-                  position: 'absolute',
-                  top: '2.8rem',
-                  left: 0,
-                  background: 'var(--bg-cinema-card)',
-                  border: '1px solid var(--border-dark)',
-                  borderRadius: 'var(--radius-md)',
-                  padding: '0.5rem',
-                  boxShadow: 'var(--shadow-cinema)',
-                  zIndex: 100,
-                  minWidth: '160px'
-                }}
-              >
+              <div className="city-dropdown-menu">
                 {CITIES.map((c) => (
                   <button
                     key={c}
@@ -93,20 +90,7 @@ const CustomerNavbar = () => {
                       setSelectedCity(c);
                       setCityDropdown(false);
                     }}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      width: '100%',
-                      padding: '0.5rem 0.75rem',
-                      background: selectedCity === c ? 'var(--primary-light)' : 'transparent',
-                      border: 'none',
-                      color: selectedCity === c ? '#c4b5fd' : '#fff',
-                      borderRadius: 'var(--radius-sm)',
-                      fontSize: '0.85rem',
-                      cursor: 'pointer',
-                      textAlign: 'left'
-                    }}
+                    className={`city-option-btn ${selectedCity === c ? 'active' : ''}`}
                   >
                     <span>{c}</span>
                     {selectedCity === c && <Check size={14} />}
@@ -117,7 +101,7 @@ const CustomerNavbar = () => {
           </div>
         </div>
 
-        {/* Center: Main Nav Links */}
+        {/* Center: Main Nav Links (Desktop) */}
         <nav className="nav-menu">
           <NavLink to="/" className={({ isActive }) => (isActive ? 'nav-item-link active' : 'nav-item-link')}>
             Home
@@ -157,20 +141,7 @@ const CustomerNavbar = () => {
             </button>
 
             {notifOpen && (
-              <div
-                style={{
-                  position: 'absolute',
-                  top: '3rem',
-                  right: 0,
-                  width: '320px',
-                  background: 'var(--bg-cinema-card)',
-                  border: '1px solid var(--border-dark)',
-                  borderRadius: 'var(--radius-lg)',
-                  boxShadow: 'var(--shadow-cinema)',
-                  padding: '1rem',
-                  zIndex: 200
-                }}
-              >
+              <div className="notif-dropdown-menu">
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
                   <h4 style={{ fontSize: '0.9rem', fontWeight: 800 }}>Notifications</h4>
                   <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Latest</span>
@@ -197,9 +168,9 @@ const CustomerNavbar = () => {
           </div>
 
           {/* My Bookings */}
-          <Link to="/bookings" className="btn btn-secondary btn-sm" style={{ padding: '0.5rem 0.85rem' }}>
+          <Link to="/bookings" className="btn btn-secondary btn-sm nav-bookings-btn">
             <Ticket size={16} />
-            <span>My Bookings</span>
+            <span className="bookings-btn-txt">My Bookings</span>
             {bookingCount > 0 && (
               <span
                 style={{
@@ -218,10 +189,40 @@ const CustomerNavbar = () => {
           {/* Switch to Admin Dashboard Pill */}
           <Link to="/admin" className="admin-mode-pill" title="Open Cinema SaaS Admin Portal">
             <Shield size={14} />
-            <span>Admin SaaS</span>
+            <span className="admin-pill-txt">Admin SaaS</span>
           </Link>
         </div>
       </div>
+
+      {/* Mobile Drawer Menu */}
+      {mobileMenuOpen && (
+        <div className="mobile-nav-drawer">
+          <NavLink to="/" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
+            Home
+          </NavLink>
+          <NavLink to="/movies" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
+            Movies
+          </NavLink>
+          <NavLink to="/theatres" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
+            Theatres
+          </NavLink>
+          <NavLink to="/offers" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
+            Offers & Deals
+          </NavLink>
+          <NavLink to="/faq" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
+            Help & Support
+          </NavLink>
+          <NavLink to="/bookings" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
+            My Bookings ({bookingCount})
+          </NavLink>
+          <NavLink to="/wishlist" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
+            Watchlist ({wishlistCount})
+          </NavLink>
+          <NavLink to="/admin" className="mobile-nav-link admin-link" onClick={() => setMobileMenuOpen(false)}>
+            🛡️ Cinema SaaS Admin Portal
+          </NavLink>
+        </div>
+      )}
     </header>
   );
 };
